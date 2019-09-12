@@ -57,7 +57,7 @@
 
 
 		<form action="./Delete" method="post">
-		<input type="hidden" name="getDelId[]" id="getDelId" />
+		<input type="hidden" name="getDelId[]" id="getDelId"/>
 		<button type="submit" name="btn" onclick="DeletingConfirm()">削除</button>
 		</form>
 

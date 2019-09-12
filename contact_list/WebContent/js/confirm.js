@@ -28,14 +28,14 @@ function DeletingConfirm() {
 	    	$('input[name=id]:checked').each (function(){
 	    		checkedId.push($(this).val());
 	    	});
-//	    	デバッグ用コード
-//	    	var delId = document.getElementById('getDelId');
-//	    	delId.value = checkedId;
-//	    	document.getElementById('getDelId').value=checkedId;
+
 			$('#getDelId').val(checkedId);
-//			var chkids = $('#getDelId').val();
-
-
+//			要素を取り出して設定する？
+//	    	var setDelId = document.getElementById('getDelId');
+//	    	setDelId.value=[];
+//	    	for(let i=0;i<checkedId.length;i++){
+//	    		setDelId.value.push(checkedId[i]);
+//    		}
 	    	}
 	    }
 

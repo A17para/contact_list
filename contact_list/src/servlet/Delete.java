@@ -34,8 +34,11 @@ public class Delete extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
+
 //		リダイレクト
 		response.sendRedirect("/contact_list/Main");
+
+
 	}
 
 	/**
@@ -44,19 +47,20 @@ public class Delete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
-
 //		リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		//リクエストパラメータ(Stringで配列）の取得
-		String[] StrDelId =request.getParameterValues("getDelId");
+		String[] StrDelId =request.getParameterValues("getDelId[]");
 //		配列をString型からint型へ変換
 		int[]delId = Stream.of(StrDelId).mapToInt(Integer::parseInt).toArray();
+
 
 		DeleteContactListLogic delete = new DeleteContactListLogic();
 		delete.execute(delId);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Delete.jsp");
 		dispatcher.forward(request, response);
+
 
 	}
 
