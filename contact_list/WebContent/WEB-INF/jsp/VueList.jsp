@@ -14,7 +14,7 @@
 <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="js/confirm.js"></script>
 <script src="js/all_check.js"></script>
-<script src="js/check_count.js"></script>
+<script src="js/edit_disabled.js"></script>
 <script src="js/update.js"></script>
 
 </head>
@@ -47,7 +47,7 @@
 		<!-- ボタンを追加 -->
 		<table>
 		<tr>
-		<input type="button" value="新規登録" onclick="location.href='./NewRegistration'">
+		<input type="button" value="新規登録" onclick="location.href='./Insert'">
 
 		<!-- チェックの数が２以上の時、ボタンを禁止にする。 -->
 		<form action="./Update" method="get">
@@ -56,9 +56,9 @@
 		</form>
 
 
-		<form action="./Delete" method="post">
-		<input type="hidden" name="getDelId[]" id="getDelId"/>
-		<button type="submit" name="btn" onclick="DeletingConfirm()">削除</button>
+		<form action="./Delete" method="get">
+		<input type="hidden" name="getDelId" id="getDelId"/>
+		<button type="submit" name="delete" onclick="DeletingConfirm()">削除</button>
 		</form>
 
 		<!-- safariは閉じる。Chromeはセキュリティの問題でタブが残る？ -->

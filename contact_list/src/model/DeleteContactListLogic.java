@@ -4,9 +4,9 @@ import dao.ContactListDAO;
 
 public class DeleteContactListLogic {
 
-	public void execute(int[] delId){
+	public void execute(String strDelId){
 		ContactListDAO dao = new ContactListDAO();
-		dao.delete(delId);
+		dao.delete(strDelId);
 
 	}
 

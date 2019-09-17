@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>編集</title>
-<link rel="stylesheet" href="style.css">
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="js/confirm.js"></script>
 </head>
 <body>
 <h2>編集</h2>
@@ -24,7 +25,7 @@
 </p>
 
 <!-- クリック時に確認ウィンドウがあったほうが親切? -->
-<input type="submit" value="登録する" onclick="EntryConfirm()">
+<input type="submit" value="登録する" onclick="UpdateConfirm()">
 </form>
 
 <input type="button" value="キャンセル" onclick="location.href='./Main'">

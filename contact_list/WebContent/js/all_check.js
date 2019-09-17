@@ -1,15 +1,11 @@
 $(function AllCheck(){
 //	選択ボタン(id=all)がクリックされたらイベント
 	$('#all').on('click',function(){
-//	チェックの数で判定
+//	チェックの数が0なら全てチェックする。それ以外なら全てのチェックを外す。
 	if ($("[name='id']").filter(":checked").length <1){
-
-		//チェックの数が０ならチェックをすべて入れる
-		$('[name="id"]').prop('checked', true);
-//		});
+			$('[name="id"]').prop('checked', true).trigger('change');
 	}else{
-		// それ以外ならチェックをすべて外す
-		$('[name="id"]').prop('checked', false);
+			$('[name="id"]').prop('checked', false).trigger('change');
 	}
 })
 })

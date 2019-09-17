@@ -7,12 +7,11 @@
 <title>新規登録</title>
 <script src="js/confirm.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
-<!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
 <h2>新規登録</h2>
 
-<form action="./NewRegistration" method="post">
+<form action="./Insert" method="post">
 <p>
 <label>氏(※)：<input type="text" name="first_name" required></label><br>
 <label>名氏(※)：<input type="text" name="last_name" required></label><br>

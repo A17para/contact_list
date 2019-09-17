@@ -190,7 +190,7 @@ public class ContactListDAO {
 
 
 
-public boolean delete (int[] id){
+public boolean delete (String strDelId){
 	Connection conn = null;
 	try{
 		//db接続
@@ -198,20 +198,15 @@ public boolean delete (int[] id){
 				JDBC_URL,DB_USER,DB_PASS);
 
 		//DELETE文の準備(idは自動連番なので指定しなくていい）
-		String sql = "DELETE FROM contact_list WHERE id = ?";
+		String sql = "DELETE FROM contact_list WHERE id IN (" + strDelId + ")";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
-
-//		拡張forで要素ごとにsql文を実行する。
-		for (int id_val :id){
-			//DELETE文中の「？」に使用する値を設定してSQlを完成
-			pStmt.setInt(1, id_val);
-			//DELETE文を実行
+		//UPDATE文を実行
 			int result = pStmt.executeUpdate();
 
 			if(result != 1){
 				return false;
 			}
-		}
+
 	}catch(SQLException e){
 		e.printStackTrace();
 		return false;
